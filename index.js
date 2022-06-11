@@ -1,7 +1,7 @@
 `use struct`
 
 const burgerForm = document.querySelector(`[class="hamburger-menu"]`);
-const burgerBotton = document.getElementById(`menu__toggle`);
+const burgerButton = document.getElementById(`menu__toggle`);
 const lowBurger = document.getElementById(`lowBurger`);
 const upBurger = document.getElementById(`upBurger`);
 
@@ -41,3 +41,24 @@ inpUp.addEventListener(`click`, ()=> {
     return 0;
 })
 
+// модульный кусок для отслеживания состояния 
+
+const sostMenu =  burgerForm.querySelector(`[class="menu__box"]`);
+const sostInMenu =  burgerForm.querySelector(`[class="selectBlock"]`);
+
+window.addEventListener(`resize`, (e)=> {
+    if ((+document.documentElement.scrollWidth - 20) >= 901 ) {
+        upBurger.style.left = `${0}%`;
+        upBurger.style.visibility = `visible`;
+        console.log(document.documentElement.scrollWidth);
+    } else {
+        upBurger.style.left = `${-100}%`;
+        upBurger.style.visibility = `hidden`;
+        lowBurger.style.left = `${-100}%`;
+        lowBurger.style.visibility = `hidden`;
+    }
+    if (burgerButton.checked && (+document.documentElement.scrollWidth - 20) >= 901 ) {
+        burgerButton.checked = false
+    }
+    return 0;
+})

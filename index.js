@@ -47,10 +47,9 @@ const sostMenu =  burgerForm.querySelector(`[class="menu__box"]`);
 const sostInMenu =  burgerForm.querySelector(`[class="selectBlock"]`);
 
 window.addEventListener(`resize`, (e)=> {
-    if ((+document.documentElement.scrollWidth - 20) >= 901 ) {
+    if ((+document.documentElement.scrollWidth) >= 921 ) {
         upBurger.style.left = `${0}%`;
         upBurger.style.visibility = `visible`;
-        console.log(document.documentElement.scrollWidth);
     } else {
         upBurger.style.left = `${-100}%`;
         upBurger.style.visibility = `hidden`;

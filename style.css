@@ -18,6 +18,33 @@
     position: absolute;
 }
 
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.obert__menu {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* элементы меню */
+
+.menu__item {
+    display: block;
+    padding: 12px 24px;  color: #333;  font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    text-align: start;
+    font-weight: 600;  text-decoration: none;
+}
+
+.menu__item:hover {
+    background-color: #CFD8DC;
+}
+
 @media (max-width: 900px) {
 /* стилизуем кнопку */
 .menu__btn {
@@ -61,20 +88,6 @@
     box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
     transition: .3s;
 }
-/* элементы меню */
-
-.menu__item {
-    display: block;
-    padding: 12px 24px;  color: #333;  font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    text-align: start;
-    font-weight: 600;  text-decoration: none;
-}
-
-.menu__item:hover {
-    background-color: #CFD8DC;
-}
-
 /* OPEN/CLOSE BURGER */
 
 #menu__toggle:checked ~ .menu__btn > span {
@@ -110,6 +123,10 @@ li.patf .menu__box {
 }
 
 @media (min-width: 900px) {
+    .obert__menu {
+        margin-left: auto;
+        margin-right: auto;
+    }
     .menu__btn > span {
         display: none;
         transition: none;
@@ -120,9 +137,8 @@ li.patf .menu__box {
         visibility: visible;
         flex-direction: row;
         justify-content: space-around;
-        width: 100%;
+        width: auto;
         margin: 0;
-        padding: 10px 10px;
         text-align: center;  background-color: #ECEFF1;
         box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
         transition: none;
@@ -138,9 +154,19 @@ li.patf .menu__box {
         justify-content: space-around;
         width: 100%;
         margin: 0;
-        padding: 80px 0;
         text-align: center;  background-color: #ECEFF1;
         box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
         transition: none;
+    }
+    .menu__item {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1400px) {
+    /* элементы меню */
+    .menu__item {
+        font-size: 24px;
+        padding: 20px 35px;
     }
 }
